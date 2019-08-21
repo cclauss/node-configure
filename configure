@@ -14,6 +14,7 @@ exec python "$0" "$@"
 del _
 
 import sys
+print("*" * 20, "Found Python {}.{}...".format(*sys.version_info))
 from distutils.spawn import find_executable as which
 if sys.version_info[:2] not in ((2, 7), (3, 7)):
   sys.stderr.write('Please use Python 2.7 or 3.7')
