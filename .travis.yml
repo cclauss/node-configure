@@ -24,5 +24,7 @@ matrix:
     - name: "Language: node_js, Python 3.7.1"
       install: pyenv global 3.7.1
 
-before_script: python --version
+before_script:
+  - python --version
+  - chmod +x ./configure
 script: ./configure
