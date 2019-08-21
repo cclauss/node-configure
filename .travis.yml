@@ -1,0 +1,28 @@
+os: linux
+language: node_js
+node_js: node
+matrix:
+  include:
+    - name: "Language: cpp, Python 2.7.15"
+      language: cpp
+      install: pyenv global 2.7.15
+
+    - name: "Language: cpp, Python 3.6.7"
+      language: cpp
+      install: pyenv global 3.6.7
+
+    - name: "Language: cpp, Python 3.7.1"
+      language: cpp
+      install: pyenv global 3.7.1
+
+    - name: "Language: node_js, Python 2.7.15"
+      install: pyenv global 2.7.15
+
+    - name: "Language: node_js, Python 3.6.7"
+      install: pyenv global 3.6.7
+
+    - name: "Language: node_js, Python 3.7.1"
+      install: pyenv global 3.7.1
+
+before_script: python --version
+script: ./configure
