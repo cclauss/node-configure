@@ -20,13 +20,13 @@ from distutils.spawn import find_executable
 print('Node configure: Found Python {0}.{1}.{2}...'.format(*sys.version_info))
 acceptable_pythons = ((2, 7), (3, 7), (3, 6), (3, 5))
 if sys.version_info[:2] not in acceptable_pythons:
-  python_cmds = ['python{}.{}'.format(*vers) for vers in acceptable_pythons]
-  sys.stderr.write('Please use {}.\n'.format(' or '.join(python_cmds)))
-  for python_cmd in python_cmds + ['python2', 'python3']:
+  python_cmds = ['python{0}.{1}'.format(*vers) for vers in acceptable_pythons]
+  sys.stderr.write('Please use {0}.\n'.format(' or '.join(python_cmds)))
+  for python_cmd in python_cmds:
       python_cmd_path = find_executable(python_cmd)
       if python_cmd_path and 'pyenv/shims' not in python_cmd_path:
-        sys.stderr.write('\t{} {}\n'.format(python_cmd_path,
-                                            ' '.join(sys.argv[:1])))
+        sys.stderr.write('\t{0} {1}\n'.format(python_cmd_path,
+                                              ' '.join(sys.argv[:1])))
   sys.exit(1)
 
 import configure
