@@ -8,20 +8,27 @@ matrix:
       before_install: pyenv install --list
       install: pyenv global 2.7.15
 
-    - name: "Language: cpp, Python 3.4.8"
+    - name: "Language: cpp, Python 3.4.7"
       language: cpp
-      install: pyenv global 3.4.8
+      install: pyenv global 3.4.7
 
-    - name: "Language: cpp, Python 3.4.9"
+    - name: "Language: cpp, Python 3.4.7"
       language: cpp
-      install: pyenv global 3.4.9
+      before_install: pyenv install 3.4.7
+      install: pyenv global 3.4.7
 
     - name: "Language: cpp, Python 3.4.10"
       language: cpp
+      before_install: pyenv install 3.4.10
       install: pyenv global 3.4.10
 
     - name: "Language: cpp, Python 3.5.4"
       language: cpp
+      install: pyenv global 3.5.4
+
+    - name: "Language: cpp, Python 3.5.4"
+      language: cpp
+      before_install: pyenv install 3.5.4
       install: pyenv global 3.5.4
 
     - name: "Language: cpp, Python 3.5.5"
@@ -34,6 +41,7 @@ matrix:
 
     - name: "Language: cpp, Python 3.5.7"
       language: cpp
+      before_install: pyenv install 3.5.7
       install: pyenv global 3.5.7
 
     - name: "Language: cpp, Python 3.6.7"
