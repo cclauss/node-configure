@@ -2,47 +2,29 @@ os: linux
 language: node_js
 node_js: node
 matrix:
+  allow_failures:
+    - install: pyenv global 2.6.9
+    - install: pyenv global 3.4.7
   include:
+    - name: "Language: cpp, Python 2.6.9"  # Unsupported release
+      language: cpp
+      before_install: pyenv install 2.6.9  # This takes time...
+      install: pyenv global 2.6.9
+
     - name: "Language: cpp, Python 2.7.15"
       language: cpp
       before_install: pyenv install --list
       install: pyenv global 2.7.15
 
-    - name: "Language: cpp, Python 3.4.7"
+    - name: "Language: cpp, Python 3.4.7"  # Unsupported release
       language: cpp
+      before_install: pyenv install 3.4.7  # This takes time...
       install: pyenv global 3.4.7
-
-    - name: "Language: cpp, Python 3.4.7"
-      language: cpp
-      before_install: pyenv install 3.4.7
-      install: pyenv global 3.4.7
-
-    - name: "Language: cpp, Python 3.4.10"
-      language: cpp
-      before_install: pyenv install 3.4.10
-      install: pyenv global 3.4.10
 
     - name: "Language: cpp, Python 3.5.4"
       language: cpp
+      before_install: pyenv install 3.5.4  # This takes time...
       install: pyenv global 3.5.4
-
-    - name: "Language: cpp, Python 3.5.4"
-      language: cpp
-      before_install: pyenv install 3.5.4
-      install: pyenv global 3.5.4
-
-    - name: "Language: cpp, Python 3.5.5"
-      language: cpp
-      install: pyenv global 3.5.5
-
-    - name: "Language: cpp, Python 3.5.6"
-      language: cpp
-      install: pyenv global 3.5.6
-
-    - name: "Language: cpp, Python 3.5.7"
-      language: cpp
-      before_install: pyenv install 3.5.7
-      install: pyenv global 3.5.7
 
     - name: "Language: cpp, Python 3.6.7"
       language: cpp
