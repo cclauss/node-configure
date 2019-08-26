@@ -19,7 +19,7 @@ print("*" * 20, "Found Python {}.{}...".format(*sys.version_info))
 from distutils.spawn import find_executable as which
 acceptable_pythons = ((2, 7), (3, 5), (3, 6), (3, 7))
 if sys.version_info[:2] not in acceptable_pythons:
-  pythons = ' or '.join('.'.join(*vers) for vers in acceptable_pythons)
+  pythons = ' or '.join('.'.join(vers) for vers in acceptable_pythons)
   sys.stderr.write('Please use Python {}.')
 
   python2 = which('python2') or which('python2.7') or which('python3.7')
