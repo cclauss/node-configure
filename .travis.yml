@@ -8,6 +8,7 @@ matrix:
   include:
     - name: "Language: cpp, Python 2.6.9"  # Unsupported release
       language: cpp
+      dist: trusty
       before_install: pyenv install 2.6.9  # This takes time...
       install: pyenv global 2.6.9
 
