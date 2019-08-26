@@ -24,9 +24,9 @@ if sys.version_info[:2] not in acceptable_pythons:
   sys.stderr.write('Please use {}.\n'.format(' or '.join(python_cmds)))
   for python_cmd in python_cmds + ['python2', 'python3']:
       python_cmd_path = find_executable(python_cmd)
-      if python_cmd_path:
-        sys.stderr.write(':\n\n  {} {}\n'.format(python_cmd_path,
-                                                 ' '.join(sys.argv[:1])))
+      if python_cmd_path and 'pyenv/shims' not in python_cmd_path:
+        sys.stderr.write('\t{} {}\n'.format(python_cmd_path,
+                                            ' '.join(sys.argv[:1])))
   sys.exit(1)
 
 import configure
