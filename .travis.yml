@@ -9,7 +9,7 @@ matrix:
     - name: "Language: python, Python 2.6.9"  # Unsupported release
       dist: trusty
       language: python
-      python: 3.6
+      python: 2.6
       # before_install: pyenv install 2.6.9  # This takes time...
       # install: pyenv global 2.6.9
 
