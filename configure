@@ -22,7 +22,7 @@ acceptable_pythons = ((2, 7), (3, 7), (3, 6), (3, 5))
 if sys.version_info[:2] not in acceptable_pythons:
   python_cmds = ['python{}.{}'.format(*vers) for vers in acceptable_pythons]
   sys.stderr.write('Please use {}.\n'.format(' or '.join(python_cmds)))
-  for python_cmd in pythons_cmds + ['python2', 'python3']:
+  for python_cmd in python_cmds + ['python2', 'python3']:
       python_cmd_path = find_executable(python_cmd)
       if python_cmd_path:
         sys.stderr.write(':\n\n  {} {}\n'.format(python_cmd_path,
