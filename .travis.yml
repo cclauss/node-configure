@@ -64,8 +64,7 @@ matrix:
       before_install: pyenv install --list
       install: pyenv global 2.7.15
 
-    - name: "Language: cpp, Python 3.5.4"
-      language: cpp
+    - name: "Language: node_js, Python 3.5.4"
       before_install: pyenv install 3.5.4  # This takes time...
       install: pyenv global 3.5.4
 
