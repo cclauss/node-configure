@@ -6,6 +6,10 @@ matrix:
     - language: python
     - install: pyenv global 3.4.7
   include:
+    - name: "Language: node_js, python3 --version"
+      language: node_js
+      install: python3 --version || python3 -m pip --version || true
+
     - name: "Language: python, Python 2.6"  # Unsupported release
       dist: trusty
       language: python
